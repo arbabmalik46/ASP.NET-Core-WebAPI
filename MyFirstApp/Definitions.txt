@@ -1,0 +1,13 @@
+HTTP Response Headers that we are going to use in this webAPI project:
+Server: name of the server which sent the request
+Cache-control: Indicated the number of seconds the response can be cached in the browser's memory.
+Content-type: What type of content type is sent in the response.
+Content-Lenght: Length(in bytes) of response body.
+Date: Date and time when response is sent.
+Set-Cookie: Contains cookies to send to the browser. Eg - x=20;
+Location: URL to be direct.
+
+Status Code:
+Status Code 1xx:
+ALl the status code starting from 100 to 199 are informational in nature.
+101
