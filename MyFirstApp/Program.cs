@@ -1,6 +1,7 @@
 using MyFirstApp;
 using Microsoft.AspNetCore.WebUtilities;
 using System.Reflection.Metadata.Ecma335;
+using Microsoft.Extensions.Primitives;
 
 //Returns an instance of WebApplicationsBuilder class
 var builder = WebApplication.CreateBuilder(args);
@@ -86,11 +87,21 @@ app.Run(async (HttpContext context) => {
     }
     else if (method == "POST" && path == "/Products")
     {
+        string? stringname = "";
+        string? stringid = "";
         StreamReader reader = new StreamReader(context.Request.Body);
         string data = await reader.ReadToEndAsync();
-        await context.Response.WriteAsync($"Body contains: {data}");
-        var objectdata = QueryHelpers.ParseQuery(data);
+        Dictionary<string,StringValues> objectdata = QueryHelpers.ParseQuery(data);
+        if(objectdata.ContainsKey("id"))
+        {
+            stringid = objectdata["id"];
+        }
+        if(objectdata.ContainsKey("name"))
+        {
+            stringname = objectdata["name"][1];
+        }
         
+        await context.Response.WriteAsync($"ID: {stringid} and name is {stringname}");
     }
     else
     {

@@ -1,0 +1,27 @@
+HTTP Response Headers that we are going to use in this webAPI project:
+Server: name of the server which sent the request
+Cache-control: Indicated the number of seconds the response can be cached in the browser's memory.
+Content-type: What type of content type is sent in the response.
+Content-Lenght: Length(in bytes) of response body.
+Date: Date and time when response is sent.
+Set-Cookie: Contains cookies to send to the browser. Eg - x=20;
+Location: URL to be direct.
+
+Status Code:
+Use following website to learn about API Statuses
+https://restfulapi.net/http-status-codes/ 
+
+Server Side Rendering:
+In a server side rendered website, the web page is generate on the server and HTML of that webpage is sent in the response,	when a request is made.
+Client Side Rendering:
+In a client side rendered website, the webpage is generated at the client with the help of some frontend framework like Angular, React etc
+
+Middleware:
+Middleware is the component that is assembled into the application pipeline to handle request and responses.
+Middleware are chained one after the other and they are executed in the order in which they are defined in ASP.NET Core Application
+In order to call the next middleware in requested pipeline, we need to expilicitly call it by calling Next Method.
+Each Middleware should perform a single task.
+Middleware can be created in two ways, using Request Delegates (Anonymous function or lambda expression) or by using a class
+It is like a function which is executed for each request that is made.
+
+For Middleware order information, please refer to this link: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-8.0
