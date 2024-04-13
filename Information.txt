@@ -25,3 +25,6 @@ Middleware can be created in two ways, using Request Delegates (Anonymous functi
 It is like a function which is executed for each request that is made.
 
 For Middleware order information, please refer to this link: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-8.0
+
+UseRouting:
+When the UseRouting middleware executes, at that time only, it identifies the proper route defined in the code, based on the incoming request.
